@@ -1,7 +1,7 @@
 {
   "name": "typescript-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "- Die Tools ESLint, Prettier und TypeScript dienen dazu kontinuirlich besseren Code zu entwickeln\r - Prettier: gleicher Code Style, mit bestimmten Regeln\r - ESLint: Regeln, die Fehler anhand von bestimmten Coding Regeln aufdecken können. Definiert die DoD im Code\r - Swagger & TSOA: TSOA kann dafür sorgen, eine Swagger API Dokumentation zu erstellen",
   "main": "index.js",
   "scripts": {
     "test": "DOTENV_CONFIG_PATH=.test.env jest",
@@ -14,7 +14,7 @@
     "swagger": "tsoa spec"
   },
   "keywords": [],
-  "author": "",
+  "author": "Micha",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
@@ -47,5 +47,9 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.5.3",
     "typescript-eslint": "^7.16.0"
+  },
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
   }
 }
