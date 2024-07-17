@@ -9,12 +9,12 @@ import {
 } from '@tsoa/runtime';
 import { Request as ExpressRequest } from 'express';
 import { StatusCodes } from 'http-status-codes';
-import DeviceInfo from '../../database/models/DeviceInfoModel';
+import DeviceInfoModel from '../../database/models/DeviceInfoModel';
 
 export interface ISetDeviceInfoBody {
   userId: number;
-  version: string | null;
-  baseOs: 'ios' | 'android' | 'windows' | 'web';
+  version: string;
+  baseOS: 'ios' | 'android' | 'windows' | 'web';
 }
 export type ISetDeviceInfoResponse = boolean;
 
@@ -27,17 +27,17 @@ class StatsController extends Controller {
     @Request() req: ExpressRequest,
     @Body() body: ISetDeviceInfoBody,
   ): Promise<ISetDeviceInfoResponse | Error> {
-    const { userId, version, baseOs } = body;
+    const { userId, version, baseOS } = body;
 
     if (userId) {
-      await DeviceInfo.destroy({
-        where: { userId, baseOs },
+      await DeviceInfoModel.destroy({
+        where: { userId, baseOS },
       });
     }
-    await DeviceInfo.create({
+    await DeviceInfoModel.create({
       userId,
       version,
-      baseOs,
+      baseOS,
     });
     return true;
   }

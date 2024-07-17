@@ -2,7 +2,7 @@
 
 import { DataTypes, Model, Optional } from 'sequelize';
 import todoSequelize from '../setup/database';
-import { TodoAttributes } from '../../interfaces/models/TodoAttributes';
+import { TodoAttributes } from '../../interfaces/db-models/TodoAttributes';
 
 // Optional fields for model creation
 interface TodoCreationAttributes
